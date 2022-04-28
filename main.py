@@ -2,7 +2,7 @@ import tkinter as tk
 import json
 import requests as req
 
-dagan = tk.Tk()
+cat = tk.Tk()
 
 
 def btn_update():
@@ -146,17 +146,20 @@ def btn_update():
     elif answer == "Spacex":
         response = req.get("https://api.spacexdata.com/v4/launches/latest")
         display_answer.config(text = response.json(), wraplengt=400)
+    elif answer == "RBUF":
+        response = req.get("https://uselessfacts.jsph.pl/random")
+        display_answer.config(text = response.json(), wraplengt=400)
     else:
         display_answer.config(text="Invalid")
 
 
-label = tk.Label(dagan, text="Enter a letter or a number from 1 to 10")
-display_answer = tk.Label(dagan, text="")
-entry = tk.Entry(dagan)
+label = tk.Label(cat, text="Enter a letter or a number from 1 to 10")
+display_answer = tk.Label(cat, text="")
+entry = tk.Entry(cat)
 label.pack()
 entry.pack()
 display_answer.pack()
 
-tk.Button(dagan, text="Enter", command=btn_update).pack()
+tk.Button(cat, text="Enter", command=btn_update).pack()
 
-dagan.mainloop()
+cat.mainloop()
