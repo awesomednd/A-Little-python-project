@@ -1,6 +1,10 @@
 import tkinter as tk
 import json
+from urllib import response
 import requests as req
+import pandas as pd
+
+pd.set_option('display.max_colwidth', None)
 
 cat = tk.Tk()
 
@@ -136,7 +140,7 @@ def btn_update():
         display_answer.config(text="Super Invalid")
     elif answer == "Weather":
         response = req.get("https://goweather.herokuapp.com/weather/johannesburg")
-        display_answer.config(text = response.json(), wraplengt=200)
+        display_answer.config(text = pd.DataFrame(response.json()), wraplengt=1000)
     elif answer == "Funfact":
         response = req.get("https://api.aakhilv.me/fun/facts")
         display_answer.config(text = response.json(), wraplengt=200)
