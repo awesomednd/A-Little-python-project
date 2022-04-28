@@ -146,8 +146,8 @@ def btn_update():
     elif answer == "Spacex":
         response = req.get("https://api.spacexdata.com/v4/launches/latest")
         display_answer.config(text = response.json(), wraplengt=400)
-    elif answer == "RBUF":
-        response = req.get("https://uselessfacts.jsph.pl/random")
+    elif answer == "Catfact":
+        response = req.get("https://cat-fact.herokuapp.com/facts")
         display_answer.config(text = response.json(), wraplengt=400)
     else:
         display_answer.config(text="Invalid")
