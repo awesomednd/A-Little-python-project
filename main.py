@@ -1,4 +1,4 @@
-import tk
+import tkinter as tk
 import json
 from urllib import response
 import requests as req
